@@ -14,7 +14,7 @@ app.set("view engine", "pug");
 // Set the path where to find the pages to render
 app.set("views", path.join(__dirname, "views"));
 
-// Let the app use the body parser package
+// Set the middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -25,6 +25,9 @@ mongoose.connect("mongodb://localhost:27017/node-project", () => { console.log('
 // Import Routes
 const registrationRoute = require('./routes/regRoute')
 app.use('/register', registrationRoute);
+ 
+const postsRoute = require('./routes/regRoute');
+app.use('/form', postsRoute);
 
 
 //  Listening for requests: the server
