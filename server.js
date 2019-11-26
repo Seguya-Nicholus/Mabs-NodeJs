@@ -26,7 +26,7 @@ mongoose.connect("mongodb://localhost:27017/node-project", () => { console.log('
 const registrationRoute = require('./routes/regRoute')
 app.use('/register', registrationRoute);
  
-const postsRoute = require('./routes/regRoute');
+const postsRoute = require('./routes/logRoute');
 app.use('/form', postsRoute);
 
 
