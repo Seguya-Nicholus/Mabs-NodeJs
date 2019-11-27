@@ -18,5 +18,7 @@ block content
                                 td #{agent.fullname}
                                 td #{agent.username}
                                 td #{agent.emailaddress}
-                                //- td #{agent.nationalId}
-                                
+                                td
+                                    form(method="post" action='/register/delete')
+                                        input(type="hidden", placeholder="", name="id", value=agent._id)
+                                        button.btn.btn-dark.btn-block(type="submit") Delete

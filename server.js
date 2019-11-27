@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-// mongoose db connection
+// mongoose database connection
 mongoose.connect("mongodb://localhost:27017/node-project", () => { console.log('Database Connection Successful') });
 
 // Import Routes
