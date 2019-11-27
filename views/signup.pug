@@ -6,11 +6,14 @@ block content
                 header.card-header 
                     h4.card-title Register Agent
                 br
-                form(method='POST')
+                form(method='POST' action='/register')
                     div.form-row 
                         div.col.form-group 
                             label Full Name
                             input.form-control(name='fullname')
+                        div.col.form-group 
+                            label Username
+                            input.form-control(name='username')
                     div.form.row
                         div.col.form-group 
                             label Email Address
