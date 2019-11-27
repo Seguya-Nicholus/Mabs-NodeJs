@@ -1,0 +1,35 @@
+extends layout
+block content
+    div.row.justify-content-center
+        div.col-md-6 
+            div.card-body 
+                header.card-header 
+                    h4.card-title Register Agent
+                br
+                form(method='POST' action='/register')
+                    div.form-row 
+                        div.col.form-group 
+                            label Full Name
+                            input.form-control(name='fullname')
+                        div.col.form-group 
+                            label Username
+                            input.form-control(name='username')
+                    div.form.row
+                        div.col.form-group 
+                            label Email Address
+                            input.form-control(name='emailaddress')
+                    div.form.row
+                        div.col.form-group 
+                            label National Id Number
+                            input.form-control(name='nationalId')
+                    div.form.row
+                        div.col.form-group 
+                            label Create Password
+                            input.form-control(type="password" name='password')
+                    div.form.row
+                        div.col.form-group 
+                            label Upload Photo
+                            input.form-control(type="file" name="myFile")
+                    div.form.row 
+                        div.col.form-group 
+                            button.btn.btn-primary.btn-block Register

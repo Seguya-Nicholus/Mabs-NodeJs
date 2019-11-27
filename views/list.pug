@@ -1,0 +1,22 @@
+extends layout
+block content
+    div.row.justify-content-center
+        div.col-md-6 
+            div.card-body 
+                header.card-header 
+                    h4.card-title Registered Agents
+                table.table
+                    thead.thead-dark 
+                        tr
+                            th FullName
+                            th UserName
+                            th EmailAddress
+                            //- th NationalIdNumber
+                    tbody
+                        each agent in agents
+                            tr 
+                                td #{agent.fullname}
+                                td #{agent.username}
+                                td #{agent.emailaddress}
+                                //- td #{agent.nationalId}
+                                
