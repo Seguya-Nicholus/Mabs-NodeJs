@@ -5,12 +5,26 @@ block content
             div.card-body 
                 header.card-header 
                     h4.card-title Registered Agents
+                    //-  b Hello, #{currentUser.firstname}  
+                    |&nbsp
+                    div.form-row
+                        div.col.form-group.col-md-9    
+                            form.search()
+                                div.form-row
+                                    div.col-md-8
+                                        input.form-control(name='city' placeholder="Search for Agent ...")
+                                    div.col-md-4
+                                        input.btn.btn-success.btn-block(type="submit")
+                        div.col.form-group.col-md-3    
+                            form(method="post" action='/logout')
+                                button.btn.btn-info.btn-block(type="submit") Log out
                 table.table
                     thead.thead-dark 
                         tr
                             th FullName
                             th UserName
                             th EmailAddress
+                            th
                             //- th NationalIdNumber
                     tbody
                         each agent in agents
@@ -21,4 +35,4 @@ block content
                                 td
                                     form(method="post" action='/register/delete')
                                         input(type="hidden", placeholder="", name="id", value=agent._id)
-                                        button.btn.btn-dark.btn-block(type="submit") Delete
+                                        button.btn.btn-danger.btn-block(type="submit") Delete
