@@ -6,7 +6,7 @@ block content
                 header.card-header 
                     h4.card-title Register Agent
                 br
-                form(method='POST' action='/register')
+                form(method='post' action='/register')
                     div.form-row 
                         div.col.form-group 
                             label Full Name
@@ -29,7 +29,7 @@ block content
                     div.form.row
                         div.col.form-group 
                             label Upload Photo
-                            input.form-control(type="file" name="myFile")
+                            //- input.form-control(type="file" name="myFile")
                     div.form.row 
                         div.col.form-group 
-                            button.btn.btn-primary.btn-block Register
+                            button.btn.btn-primary.btn-block(type="submit") Register

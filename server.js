@@ -18,6 +18,13 @@ app.set("views", path.join(__dirname, "views"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//using sessions for tracking logins 
+app.use(session({
+    secret: 'thesecret',
+    resave: true,
+    saveUninitialized: false
+}))
+
 
 // mongoose db connection
 mongoose.connect("mongodb://localhost:27017/node-project", () => { console.log('Database Connection Successful') });
