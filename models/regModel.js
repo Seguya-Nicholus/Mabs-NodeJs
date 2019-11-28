@@ -1,6 +1,6 @@
 
 const mongoose = require("mongoose");
-// const bcryptjs = require('bcryptjs');
+const bcryptjs = require('bcryptjs');
 // schema definition
 const agentSchema = new mongoose.Schema({
     fullname: {
@@ -19,6 +19,13 @@ const agentSchema = new mongoose.Schema({
         type: String,
         required: 'Please Enter Password'
     }
+});
+
+
+// Hashing a paswword before saving it to the database pre-save hook
+agentSchema.pre("myPassword", function(next) {
+  this.password = bcryptjs.hashSync(this.password, 10);
+  next();
 });
 
 
